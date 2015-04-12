@@ -11,6 +11,7 @@
     "url": "https://github.com/stein321/Carpool-Server.git"
   },
   "dependencies": {
+    "pg": "4.x",
     "express": "~4.9.x"
   },
   "author": "pluggednickel",

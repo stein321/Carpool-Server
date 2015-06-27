@@ -11,8 +11,10 @@
     "url": "https://github.com/stein321/Carpool-Server.git"
   },
   "dependencies": {
-    "pg": "4.x",
-    "express": "~4.9.x"
+    "express": "latest",
+    "pg": "^4.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.2.0"
   },
   "author": "pluggednickel",
   "license": "ISC",

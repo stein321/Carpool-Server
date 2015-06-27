@@ -2,6 +2,11 @@
 var express = require('express');
 var app = express();
 var pg = require('pg');
+var Sequelize = requite('sequelize');
+var sequelize = new Sequelize(process.env.DATABASE_URL, {});
+
+var User = sequelize.define('User', {
+  username: Sequelize.STRING,
 
 app.set('port', (process.env.PORT || 5000));
 

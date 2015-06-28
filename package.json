@@ -1,25 +1,25 @@
 {
-  "name": "Carpool-Server",
+  "name": "carpool-server",
   "version": "1.0.0",
-  "description": "Carpool backend",
+  "description": "Contains APIs for the carpool application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "winter",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "underscore": "^1.8.3"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stein321/Carpool-Server.git"
+    "url": "git+https://github.com/stein321/Carpool-Server.git"
   },
-  "dependencies": {
-    "express": "latest",
-    "pg": "^4.4.0",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^3.2.0"
-  },
-  "author": "pluggednickel",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/stein321/Carpool-Server/issues"
   },
-  "homepage": "https://github.com/stein321/Carpool-Server"
+  "homepage": "https://github.com/stein321/Carpool-Server#readme"
 }

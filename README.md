@@ -8,11 +8,10 @@ Running API server from heroku:
 
 Running API server locally:
 * Prepare the node environment:
-npm init
-npm install --save express body-parser underscore
+npm install
 
 * Start node locally:
-node server.js
+foreman start web
 
 * Perform HTTP requests with curl:
 curl http://localhost:3500

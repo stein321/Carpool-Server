@@ -11,8 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.13.1",
-    "express": "^4.13.0",
-    "underscore": "^1.8.3"
+    "express": "latest",
+    "underscore": "^1.8.3",
+    "pg": "4.x"
   },
   "repository": {
     "type": "git",

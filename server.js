@@ -29,10 +29,10 @@ router.get('/test', function(req, res) {
 	res.json(data);
 });
 //GET from database
-router.get('/db', function(req, res) {
+app.get('/db', function(req, res) {
 	pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 		client.query('SELECT * FROM test_table', function(err, result) {
-		  done();
+			done();
 			if(err) {
 				console.error(err); response.send("Error " + err); 
 			} else {

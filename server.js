@@ -1,12 +1,14 @@
 var express = require('express'),
         bodyParser = require('body-parser'),
-	    _ = require('underscore'),
-	        json = require('./data/pools.json'),
-		    app = express();
+        _ = require('underscore'),
+        json = require('./data/pools.json'),
+        app = express(),
+	pg = require('pg');
 
 app.set('port', process.env.PORT || 5000);
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+	extended: true }));
 app.use(bodyParser.json());
 
 var router = new express.Router();
@@ -26,6 +28,20 @@ router.get('/test', function(req, res) {
 
 	res.json(data);
 });
+//GET from database
+router.get('/db', function(req, res) {
+	pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+		client.query('SELECT * FROM test_table', function(err, result) {
+		  done();
+			if(err) {
+				console.error(err); response.send("Error " + err); 
+			} else {
+				response.render('pages/db', { results: result.rows } );
+			}
+		});
+	});
+})
+
 // POST
 router.post('/', function(req, res) {
 	// insert new item into collection after validating
@@ -36,6 +52,7 @@ router.post('/', function(req, res) {
 		res.json(500, { error: 'Validation error may have occurred!' });
 	}
 });
+
 // PUT
 router.put('/:id', function(req, res) {
 	// update an item in the collection

@@ -4,7 +4,7 @@ var express = require('express'),
 	        json = require('./data/pools.json'),
 		    app = express();
 
-app.set('port', process.env.PORT || 3500);
+//app.set('port', process.env.PORT || 3500);
 
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
